@@ -225,6 +225,10 @@ h2::after {
     font-weight: 600;
 }
 
+.overlay-text p+p {
+    margin-top: 15px;
+}
+
 /* Schedule */
 .schedule-grid {
     display: grid;

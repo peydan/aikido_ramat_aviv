@@ -1,0 +1,5 @@
+# Exclude source PDF
+*.pdf
+
+# Exclude any other source materials
+images_src/

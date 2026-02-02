@@ -11,18 +11,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
     <header>
         <nav class="container">
             <div class="logo">אייקידו רמת אביב</div>
-            <ul class="nav-links">
+            <button class="nav-toggle" id="nav-toggle" aria-label="פתח תפריט">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">בית</a></li>
                 <li><a href="#history">היסטוריה</a></li>
                 <li><a href="#teacher">שלמה אדלסברג</a></li>
                 <li><a href="#schedule">שעות אימונים</a></li>
                 <li><a href="#contact">צור קשר</a></li>
+                <li class="social-nav">
+                    <a href="https://www.facebook.com/aikidoramataviv/" target="_blank" title="Facebook"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/aikidoramataviv" target="_blank" title="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -92,13 +104,13 @@
         <section id="seki" class="section">
             <div class="container">
                 <div class="flex-row items-center gap-4">
-                    <div class="flex-1 text-center">
-                        <img src="images/shoji-seki-10th-congress.avif" alt="סקי סנסאי" class="img-responsive rounded">
-                    </div>
                     <div class="flex-1">
                         <h2>סקי סנסאי</h2>
                         <p>סקי סנסאי הוא המורה שמלווה את שלמה והקבוצה. סקי סנסאי מגיע לארץ כל שנה להעביר סדנה שנמשכת
                             בדרך כלל כמה ימים.</p>
+                    </div>
+                    <div class="flex-1 text-center">
+                        <img src="images/shoji-seki-10th-congress.avif" alt="סקי סנסאי" class="img-responsive rounded">
                     </div>
                 </div>
             </div>
@@ -131,6 +143,12 @@
                 <div class="contact-info">
                     <p><a href="tel:0544826162">054-482-6162</a></p>
                     <p><a href="mailto:shlomoedelsberg@gmail.com">shlomoedelsberg@gmail.com</a></p>
+                    <p><a href="https://www.facebook.com/aikidoramataviv/" target="_blank"
+                            class="social-link facebook"><i class="fab fa-facebook"></i> פייסבוק: aikidoramataviv</a>
+                    </p>
+                    <p><a href="https://www.instagram.com/aikidoramataviv" target="_blank"
+                            class="social-link instagram"><i class="fab fa-instagram"></i> אינסטגרם: aikidoramataviv</a>
+                    </p>
                     <p>שלמה אדלסברג</p>
                 </div>
             </div>
@@ -139,9 +157,27 @@
 
     <footer>
         <div class="container text-center">
-            <p>&copy; 2024 אייקידו רמת אביב | נוצר בהשראת האתר המקורי</p>
+            <p>&copy; 2026 אייקידו רמת אביב | נוצר בהשראת האתר המקורי</p>
         </div>
     </footer>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
